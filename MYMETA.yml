@@ -11,7 +11,7 @@ build_requires:
   Test::Warn: 0.08
 configure_requires:
   Module::Build: 0.4
-dynamic_config: 1
+dynamic_config: 0
 generated_by: 'Module::Build version 0.4003, CPAN::Meta::Converter version 2.120630'
 license: perl
 meta-spec:

@@ -1,0 +1,64 @@
+{
+   "abstract" : "An N-ary tree",
+   "author" : [
+      "Rob Kinyon E<lt>rob.kinyon@iinteractive.comE<gt>",
+      "Stevan Little E<lt>stevan.little@iinteractive.comE<gt>"
+   ],
+   "dynamic_config" : 1,
+   "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120630",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Tree",
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Scalar::Util" : "1.10",
+            "Test::Deep" : "0.088",
+            "Test::Exception" : "0.15",
+            "Test::More" : "0.47",
+            "Test::Warn" : "0.08"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "Module::Build" : "0.4"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Scalar::Util" : "1.10",
+            "perl" : "v5.6.0"
+         }
+      }
+   },
+   "provides" : {
+      "Tree" : {
+         "file" : "lib/Tree.pm",
+         "version" : "1.01"
+      },
+      "Tree::Binary" : {
+         "file" : "lib/Tree/Binary.pm",
+         "version" : "1.01"
+      },
+      "Tree::Fast" : {
+         "file" : "lib/Tree/Fast.pm",
+         "version" : "1.01"
+      },
+      "Tree::Null" : {
+         "file" : "lib/Tree/Fast.pm",
+         "version" : 0
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "license" : [
+         "http://dev.perl.org/licenses/"
+      ]
+   },
+   "version" : "1.01"
+}
