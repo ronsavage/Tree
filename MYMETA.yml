@@ -3,6 +3,7 @@ abstract: 'An N-ary tree'
 author:
   - 'Rob Kinyon E<lt>rob.kinyon@iinteractive.comE<gt>'
   - 'Stevan Little E<lt>stevan.little@iinteractive.comE<gt>'
+  - 'Co-maintenance since V 1.02 is by Ron Savage <rsavage@cpan.org>.'
 build_requires:
   Scalar::Util: 1.10
   Test::Deep: 0.088
