@@ -2,7 +2,8 @@
    "abstract" : "An N-ary tree",
    "author" : [
       "Rob Kinyon E<lt>rob.kinyon@iinteractive.comE<gt>",
-      "Stevan Little E<lt>stevan.little@iinteractive.comE<gt>"
+      "Stevan Little E<lt>stevan.little@iinteractive.comE<gt>",
+      "Co-maintenance since V 1.02 is by Ron Savage <rsavage@cpan.org>."
    ],
    "dynamic_config" : 1,
    "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120630",
