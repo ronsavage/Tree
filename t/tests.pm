@@ -10,6 +10,7 @@ my @stats = qw( height width depth size is_root is_leaf );
 use base 'Exporter';
 
 our @EXPORT_OK = qw( %runs );
+our $VERSION   = '1.02';
 
 our %runs = (
     stats => {

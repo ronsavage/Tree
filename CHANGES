@@ -5,6 +5,7 @@ Revision history for Perl distribution Tree
 	- Rename Changes to CHANGES.
 	- Use ini.report.pl (shipped with Module::Metadata::Changes) to add Changelog.ini to the distro.
 	- Reformat the dates below.
+	- Fix RT#61740.
 
 1.01  Thu Oct 18 12:00:00 2007
 	- Fixed Changes file
