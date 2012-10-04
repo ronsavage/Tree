@@ -1,0 +1,17 @@
+Revision history for Perl distribution Tree
+
+1.01 Oct 18, 2007
+  - Fixed Changes file
+    - Right distro name.
+    - 1.00 release noted
+  - Cleaned up 5.6.0 -> 5.006
+  - Fix for RT# 16889 (clone broken for Tree::Binary)
+    - Patch submitted by HDP
+  - Fix for other miscellenous bugs
+    - Patch submitted by HDP
+
+1.00 Nov 08, 2005
+  - Initial release
+
+0.99_01 Mon 24 Oct 2005 10:30:00
+  - Initial revision
