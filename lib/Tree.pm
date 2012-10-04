@@ -667,7 +667,7 @@ was one. If an error occurs, the operation will return undefined.
 
 =head1 EVENT HANDLING
 
-Forest provides for basic event handling. You may choose to register one or
+Tree provides for basic event handling. You may choose to register one or
 more callbacks to be called when the appropriate event occurs. The events
 are:
 
@@ -823,6 +823,9 @@ Rob Kinyon E<lt>rob.kinyon@iinteractive.comE<gt>
 Stevan Little E<lt>stevan.little@iinteractive.comE<gt>
 
 Thanks to Infinity Interactive for generously donating our time.
+
+Co-maintenance since V 1.02 is by Ron Savage <rsavage@cpan.org>.
+Uses of 'I' in previous versions is not me, but will be hereafter.
 
 =head1 COPYRIGHT AND LICENSE
 
