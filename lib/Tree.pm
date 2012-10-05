@@ -435,7 +435,7 @@ L<Tree::Simple>, but has a simpler interface and much, much more.
 Here, [] indicate an optional parameter.
 
 This will return a C<Tree> object. It will accept one parameter which, if passed,
-will become the I<value> (accessible by L</value()>). All other parameters will be
+will become the I<value> (accessible by C<value()>). All other parameters will be
 ignored.
 
 If you call C<< $tree->new([$value]) >>, it will instead call C<clone()>, then set
