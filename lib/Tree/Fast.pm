@@ -396,6 +396,8 @@ C<< my $mirror = $tree->clone->mirror >>.
 
 =head2 traverse( [$order] )
 
+Here, [] indicate an optional parameter.
+
 When called in list context (C<< my @traversal = $tree->traverse() >>), this will
 return a list of the nodes in the given traversal order. When called in scalar
 context (C<< my $traversal = $tree->traverse() >>), this will return a closure
@@ -438,6 +440,8 @@ This will return the parent of C<$tree>.
 
 =head2 children( [ $idx, [$idx, ..] ] )
 
+Here, [] indicate optional parameters.
+
 This will return the children of C<$tree>. If called in list context, it will
 return all the children. If called in scalar context, it will return the
 number of children.
@@ -452,7 +456,11 @@ This will return the value stored in the node.
 
 =head2 set_value([$value])
 
+Here, [] indicate an optional parameter.
+
 This will set the I<value> stored in the node to $value, then return $self.
+
+If C<$value> is not provided, undef is used.
 
 =head2 meta()
 

@@ -456,7 +456,7 @@ will be kept.
 =head2 add_child([$options], @nodes)
 
 This will add all the C<@nodes> as children of C<$tree>. $options is a optional
-unblessed hashref that specifies options for add_child(). The optional
+unblessed hashref that specifies options for C<add_child()>. The optional
 parameters are:
 
 =over 4
@@ -611,6 +611,8 @@ This will return the value stored in the node.
 Here, [] indicate an optional parameter.
 
 This will set the I<value> stored in the node to $value, then return $self.
+
+If C<$value> is not provided, undef is used.
 
 =head2 meta()
 
