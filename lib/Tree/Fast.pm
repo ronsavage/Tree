@@ -538,6 +538,6 @@ Copyright 2004, 2005 by Infinity Interactive, Inc.
 L<http://www.iinteractive.com>
 
 This library is free software; you can redistribute it and/or modify it under
-the same terms as Perl itself. 
+the same terms as Perl itself.
 
 =cut
