@@ -473,6 +473,8 @@ unshift(). If it is unset or undefined, it will act as a push().
 
 =back
 
+add_child() resets last_error() upon entry.
+
 =item B<remove_child([$options], @nodes)>
 
 This will remove all the C<@nodes> from the children of C<$tree>. You can either
@@ -481,6 +483,8 @@ wish to remove, or a combination of both.
 
 $options is a optional unblessed hashref that specifies parameters for
 remove_child(). Currently, no parameters are used.
+
+remove_child() resets last_error() upon entry.
 
 =item B<mirror()>
 
@@ -491,6 +495,9 @@ B<NOTE>: This is a destructive action. It I<will> modify the tree's internal
 structure. If you wish to get a mirror, yet keep the original tree intact, use
 C<my $mirror = $tree-E<gt>clone-E<gt>mirror;>
 
+mirror() does not reset last_error() because it (mirror() ) is implemented in L<Tree::Fast>,
+which has no error handling.
+
 =item B<traverse( [$order] )>
 
 This will return a list of the nodes in the given traversal order. The default
@@ -500,20 +507,20 @@ The various traversal orders do the following steps:
 
 =over 4
 
-=item * Pre-order (aka Prefix traversal)
+=item * Pre-order
 
 This will return the node, then the first sub tree in pre-order traversal,
 then the next sub tree, etc.
 
 Use C<$tree-E<gt>PRE_ORDER> as the C<$order>.
 
-=item * Post-order (aka Prefix traversal)
+=item * Post-order
 
 This will return the each sub-tree in post-order traversal, then the node.
 
 Use C<$tree-E<gt>POST_ORDER> as the C<$order>.
 
-=item * Level-order (aka Prefix traversal)
+=item * Level-order
 
 This will return the node, then the all children of the node, then all
 grandchildren of the node, etc.
@@ -522,9 +529,10 @@ Use C<$tree-E<gt>LEVEL_ORDER> as the C<$order>.
 
 =back
 
-=back
+traverse() does not reset last_error() because it (traverse() ) is implemented in L<Tree::Fast>,
+which has no error handling.
 
-All behaviors will reset last_error().
+=back
 
 =head2 State Queries
 
@@ -645,7 +653,7 @@ provide other arguments in your subclass to be passed to your custom handler.
 =item * B<last_error()>
 
 If an error occurred during the last behavior, this will return the error
-string. It is reset only when a behavior is called.
+string. It is reset only by add_child() and remove_child().
 
 =back
 

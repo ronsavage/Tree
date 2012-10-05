@@ -5,6 +5,8 @@ use 5.6.0;
 use strict;
 use warnings;
 
+# ----------------------
+
 eval "use Tree::Binary;";
 
 if (! $@)
@@ -42,7 +44,6 @@ Module::Build -> new
 		'Test::More'      => '0.47',
 		'Test::Warn'      => '0.08',
 	},
-	create_makefile_pl   => 'traditional',
 	recursive_test_files => 1,
 	add_to_cleanup       =>
 	[

@@ -18,11 +18,7 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Scalar::Util" : "1.10",
-            "Test::Deep" : "0.088",
-            "Test::Exception" : "0.15",
-            "Test::More" : "0.47",
-            "Test::Warn" : "0.08"
+            "ExtUtils::MakeMaker" : "0"
          }
       },
       "configure" : {
@@ -33,7 +29,10 @@
       "runtime" : {
          "requires" : {
             "Scalar::Util" : "1.10",
-            "perl" : "v5.6.0"
+            "Test::Deep" : "0.088",
+            "Test::Exception" : "0.15",
+            "Test::More" : "0.47",
+            "Test::Warn" : "0.08"
          }
       }
    },
