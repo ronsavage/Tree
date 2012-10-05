@@ -428,36 +428,32 @@ L<Tree::Simple>, but has a simpler interface and much, much more.
 
 =head1 METHODS
 
-=head2 Constructor
+=head2 Constructors
 
-=over 4
+=head2 new([$value])
 
-=item B<new([$value])>
+Here, [] indicate an optional parameter.
 
-This will return a Tree object. It will accept one parameter which, if passed,
-will become the value (accessible by C<value()>). All other parameters will be
+This will return a C<Tree> object. It will accept one parameter which, if passed,
+will become the I<value> (accessible by L</value()>). All other parameters will be
 ignored.
 
-If you call C<$tree-E<gt>new([$value])>, it will instead call C<clone()>, then set
-the value of the clone to $value.
+If you call C<< $tree->new([$value]) >>, it will instead call C<clone()>, then set
+the I<value> of the clone to $value.
 
-=item B<clone()>
+=head2 clone()
 
 This will return a clone of C<$tree>. The clone will be a root tree, but all
 children will be cloned.
 
-If you call L<Tree-E<gt>clone([$value])>, it will instead call C<new()>.
+If you call C<< Tree->clone([$value]) >>, it will instead call C<new($value)>.
 
 B<NOTE:> the value is merely a shallow copy. This means that all references
 will be kept.
 
-=back
-
 =head2 Behaviors
 
-=over 4
-
-=item B<add_child([$options], @nodes)>
+=head2 add_child([$options], @nodes)
 
 This will add all the C<@nodes> as children of C<$tree>. $options is a optional
 unblessed hashref that specifies options for add_child(). The optional
@@ -475,7 +471,9 @@ unshift(). If it is unset or undefined, it will act as a push().
 
 add_child() resets last_error() upon entry.
 
-=item B<remove_child([$options], @nodes)>
+=head2 remove_child([$options], @nodes)
+
+Here, [] indicate an optional parameter.
 
 This will remove all the C<@nodes> from the children of C<$tree>. You can either
 pass in the actual child object you wish to remove, the index of the child you
@@ -486,19 +484,21 @@ remove_child(). Currently, no parameters are used.
 
 remove_child() resets last_error() upon entry.
 
-=item B<mirror()>
+=head2 mirror()
 
 This will modify the tree such that it is a mirror of what it was before. This
 means that the order of all children is reversed.
 
 B<NOTE>: This is a destructive action. It I<will> modify the tree's internal
 structure. If you wish to get a mirror, yet keep the original tree intact, use
-C<my $mirror = $tree-E<gt>clone-E<gt>mirror;>
+C<< my $mirror = $tree->clone->mirror >>.
 
 mirror() does not reset last_error() because it (mirror() ) is implemented in L<Tree::Fast>,
 which has no error handling.
 
-=item B<traverse( [$order] )>
+=head2 traverse([$order])
+
+Here, [] indicate an optional parameter.
 
 This will return a list of the nodes in the given traversal order. The default
 traversal order is pre-order.
@@ -512,61 +512,58 @@ The various traversal orders do the following steps:
 This will return the node, then the first sub tree in pre-order traversal,
 then the next sub tree, etc.
 
-Use C<$tree-E<gt>PRE_ORDER> as the C<$order>.
+Use C<< $tree->PRE_ORDER >> as the C<$order>.
 
 =item * Post-order
 
 This will return the each sub-tree in post-order traversal, then the node.
 
-Use C<$tree-E<gt>POST_ORDER> as the C<$order>.
+Use C<< $tree->POST_ORDER >> as the C<$order>.
 
 =item * Level-order
 
 This will return the node, then the all children of the node, then all
 grandchildren of the node, etc.
 
-Use C<$tree-E<gt>LEVEL_ORDER> as the C<$order>.
+Use C<< $tree->LEVEL_ORDER >> as the C<$order>.
 
 =back
 
 traverse() does not reset last_error() because it (traverse() ) is implemented in L<Tree::Fast>,
 which has no error handling.
 
-=back
-
 =head2 State Queries
 
-=over 4
+=head2 is_root()
 
-=item * B<is_root()>
+This will return true if C<$tree> has no parent and false otherwise.
 
-This will return true is C<$tree> has no parent and false otherwise.
+=head2 is_leaf()
 
-=item * B<is_leaf()>
+This will return true if C<$tree> has no children and false otherwise.
 
-This will return true is C<$tree> has no children and false otherwise.
+=head2 has_child(@nodes)
 
-=item * B<has_child(@nodes)>
-
-This will return true is C<$tree> has each of the C<@nodes> as a child.
+This will return true if C<$tree> has each of the C<@nodes> as a child.
 Otherwise, it will return false.
 
-=item * B<get_index_for(@nodes)>
+The test to see if a node is in the tree uses refaddr() from L<Scalar::Util>, not the I<value> of the node.
+This means C<@nodes> must be an array of C<Tree> objects.
 
-This will return the index into the children list for each of the C<@nodes>
+=head2 get_index_for(@nodes)
+
+This will return the index into the children list of C<$tree> for each of the C<@nodes>
 passed in.
-
-=back
 
 =head2 Accessors
 
-=over 4
-
-=item * B<parent()>
+=head2 parent()
 
 This will return the parent of C<$tree>.
 
-=item * B<children( [ $idx, [$idx, ..] ] )>
+=head2 children( [ $idx, [$idx, ..] ] )
+
+Here, [] indicate optional parameters.
 
 This will return the children of C<$tree>. If called in list context, it will
 return all the children. If called in scalar context, it will return the
@@ -576,22 +573,22 @@ You may optionally pass in a list of indices to retrieve. This will return the
 children in the order you asked for them. This is very much like an
 arrayslice.
 
-=item * B<root()>
+=head2 root()
 
 This will return the root node of the tree that C<$tree> is in. The root of
 the root node is itself.
 
-=item * B<height()>
+=head2 height()
 
 This will return the height of C<$tree>. A leaf has a height of 1. A parent
 has a height of its tallest child, plus 1.
 
-=item * B<width()>
+=head2 width()
 
 This will return the width of C<$tree>. A leaf has a width of 1. A parent has
 a width equal to the sum of all the widths of its children.
 
-=item * B<depth()>
+=head2 depth()
 
 This will return the depth of C<$tree>. A root has a depth of 0. A child has
 the depth of its parent, plus 1.
@@ -599,21 +596,23 @@ the depth of its parent, plus 1.
 This is the distance from the root. It's useful for things like
 pretty-printing the tree.
 
-=item * B<size()>
+=head2 size()
 
 This will return the number of nodes within C<$tree>. A leaf has a size of 1.
 A parent has a size equal to the 1 plus the sum of all the sizes of its
 children.
 
-=item * B<value()>
+=head2 value()
 
 This will return the value stored in the node.
 
-=item * B<set_value([$value])>
+=head2 set_value([$value])
 
-This will set the value stored in the node to $value, then return $self.
+Here, [] indicate an optional parameter.
 
-=item * B<meta()>
+This will set the I<value> stored in the node to $value, then return $self.
+
+=head2 meta()
 
 This will return a hashref that can be used to store whatever metadata the
 client wishes to store. For example, L<Tree::Persist::DB> uses this to store
@@ -624,8 +623,6 @@ top-level metadata hashref, keyed by your package name. L<Tree::Persist> does
 this, using a unique key for each persistence layer associated with that tree.
 This will help prevent clobbering of metadata.
 
-=back
-
 =head1 ERROR HANDLING
 
 Describe what the default error handlers do and what a custom error handler is
@@ -633,9 +630,7 @@ expected to do.
 
 =head2 Error-related methods
 
-=over 4
-
-=item * B<error_handler( [ $handler ] )>
+=head2 error_handler( [ $handler ] )
 
 This will return the current error handler for the tree. If a value is passed
 in, then it will be used to set the error handler for the tree.
@@ -643,19 +638,17 @@ in, then it will be used to set the error handler for the tree.
 If called as a class method, this will instead work with the default error
 handler.
 
-=item * B<error( $error, [ arg1 [, arg2 ...] ] )>
+=head2 error( $error, [ arg1 [, arg2 ...] ] )
 
 Call this when you wish to report an error using the currently defined
 error_handler for the tree. The only guaranteed parameter is an error string
 describing the issue. There may be other arguments, and you may certainly
 provide other arguments in your subclass to be passed to your custom handler.
 
-=item * B<last_error()>
+=head2 last_error()
 
 If an error occurred during the last behavior, this will return the error
 string. It is reset only by add_child() and remove_child().
-
-=back
 
 =head2 Default error handlers
 
@@ -664,7 +657,7 @@ string. It is reset only by add_child() and remove_child().
 =item QUIET
 
 Use this error handler if you want to have quiet error-handling. The
-last_error method will retrieve the error from the last operation, if there
+L</last_error()> method will retrieve the error from the last operation, if there
 was one. If an error occurs, the operation will return undefined.
 
 =item WARN
@@ -683,14 +676,14 @@ are:
 
 =item * add_child
 
-This event will trigger as the last step in an L<add_child()> call.
+This event will trigger as the last step in an L</add_child([$options], @nodes)> call.
 
 The parameters will be C<( $self, @args )> where C<@args> is the arguments
 passed into the add_child() call.
 
 =item * remove_child
 
-This event will trigger as the last step in an L<remove_child()> call.
+This event will trigger as the last step in an L</remove_child([$options], @nodes)> call.
 
 The parameters will be C<( $self, @args )> where C<@args> is the arguments
 passed into the remove_child() call.
@@ -707,14 +700,12 @@ be accessed through C<$self-E<gt>value()>.
 
 =head2 Event handling methods
 
-=over 4
-
-=item * B<add_event_handler( $type => $callback [, $type => $callback, ... ])>
+=head2 add_event_handler( $type => $callback [, $type => $callback, ... ])
 
 You may choose to add event handlers for any known type. Callbacks must be
 references to subroutines. They will be called in the order they are defined.
 
-=item * B<event( $type, $actor, @args )>
+=head2 event( $type, $actor, @args )
 
 This will trigger an event of type C<$type>. All event handlers registered on
 C<$tree> will be called with parameters of C<($actor, @args)>. Then, the
@@ -724,14 +715,12 @@ the root.
 This allows you specify an event handler on the root and be guaranteed that it
 will fire every time the appropriate event occurs anywhere in the tree.
 
-=back
-
 =head1 NULL TREE
 
 If you call C<$self-E<gt>parent> on a root node, it will return a Tree::Null
 object. This is an implementation of the Null Object pattern optimized for
 usage with L<Tree>. It will evaluate as false in every case (using
-L<overload>) and all methods called on it will return a Tree::Null object.
+I<overload>) and all methods called on it will return a Tree::Null object.
 
 =head2 Notes
 

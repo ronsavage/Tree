@@ -331,8 +331,8 @@ Tree::Fast - the fastest possible implementation of a tree in pure Perl
 
 This is meant to be the core implementation for L<Tree>, stripped down as much
 as possible. There is no error-checking, bounds-checking, event-handling,
-convenience methods, or anything else of the sort. If you want something fuller-
-featured, please look at L<Tree>, which is a wrapper around Tree::Fast.
+convenience methods, or anything else of the sort. If you want something fuller-featured,
+please look at L<Tree>, which is a wrapper around Tree::Fast.
 
 =head1 METHODS
 
@@ -343,7 +343,7 @@ featured, please look at L<Tree>, which is a wrapper around Tree::Fast.
 =item B<new([$value])>
 
 This will return a Tree object. It will accept one parameter which, if passed,
-will become the value (accessible by L<value()>). All other parameters will be
+will become the I<value> (accessible by L</value()>). All other parameters will be
 ignored.
 
 If you call C<$tree-E<gt>new([$value])>, it will instead call C<clone()>, then set
@@ -480,7 +480,7 @@ This will help prevent clobbering of metadata.
 If you call C<$self-E<gt>parent> on a root node, it will return a Tree::Null
 object. This is an implementation of the Null Object pattern optimized for
 usage with L<Forest>. It will evaluate as false in every case (using
-L<overload>) and all methods called on it will return a Tree::Null object.
+I<overload>) and all methods called on it will return a Tree::Null object.
 
 =head2 Notes
 

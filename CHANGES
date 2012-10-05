@@ -7,7 +7,7 @@ Revision history for Perl distribution Tree
 	- Use ini.report.pl (shipped with Module::Metadata::Changes) to add Changelog.ini to the distro.
 	- Reformat the dates below.
 	- Change lib/Tree/Fast.pm to Unix line endings.
-	- Clean up PODs, slightly.
+	- Clean up POD.
 	- Re-work Makefile.PL rather than have Build.PL generate it.
 
 1.01  Thu Oct 18 12:00:00 2007
