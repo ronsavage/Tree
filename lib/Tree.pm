@@ -465,7 +465,9 @@ parameters are:
 
 This specifies the index to add C<@nodes> at. If specified, this will be passed
 into splice(). The only exceptions are if this is 0, it will act as an
-unshift(). If it is unset or undefined, it will act as a push().
+unshift(). If it is unset or undefined, it will act as a push(). Lastly, if it is out of range
+(too negative or too big [beyond the number of children]) the child is not added, and an error msg
+will be available in L</last_error()>.
 
 =back
 
@@ -702,7 +704,7 @@ be accessed through C<$self-E<gt>value()>.
 
 =head2 Event handling methods
 
-=head2 add_event_handler( $type => $callback [, $type => $callback, ... ])
+=head2 add_event_handler( {$type => $callback [, $type => $callback, ... ]} )
 
 You may choose to add event handlers for any known type. Callbacks must be
 references to subroutines. They will be called in the order they are defined.
