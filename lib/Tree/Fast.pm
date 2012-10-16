@@ -147,7 +147,7 @@ sub meta {
     my $self = shift;
     my $meta = shift;
 
-    $self->{_meta} = {%{$self -> meta}, %$meta} if ($meta && !blessed($meta) && ref($meta) eq 'HASH');
+    $self->{_meta} = {%{$self->{_meta} }, %$meta} if ($meta && !blessed($meta) && ref($meta) eq 'HASH');
 
     return $self->{_meta};
 }
