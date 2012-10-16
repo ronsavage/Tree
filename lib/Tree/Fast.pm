@@ -389,7 +389,7 @@ wish to remove, or a combination of both.
 $options is a required hashref that specifies parameters for remove_child().
 Currently, no parameters are used.
 
-=head mirror()
+=head2 mirror()
 
 This will modify the tree such that it is a mirror of what it was before. This
 means that the order of all children is reversed.
