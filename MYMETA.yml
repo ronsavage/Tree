@@ -5,7 +5,11 @@ author:
   - 'Stevan Little E<lt>stevan.little@iinteractive.comE<gt>'
   - 'Co-maintenance since V 1.02 is by Ron Savage <rsavage@cpan.org>.'
 build_requires:
-  ExtUtils::MakeMaker: 0
+  Scalar::Util: 1.10
+  Test::Deep: 0.088
+  Test::Exception: 0.15
+  Test::More: 0.47
+  Test::Warn: 0.08
 configure_requires:
   Module::Build: 0.4
 dynamic_config: 0
@@ -30,10 +34,7 @@ provides:
     version: 0
 requires:
   Scalar::Util: 1.10
-  Test::Deep: 0.088
-  Test::Exception: 0.15
-  Test::More: 0.47
-  Test::Warn: 0.08
+  perl: v5.6.0
 resources:
   license: http://dev.perl.org/licenses/
 version: 1.02
