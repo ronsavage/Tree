@@ -18,17 +18,8 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : "0"
-         }
-      },
-      "configure" : {
-         "requires" : {
-            "Module::Build" : "0.4"
-         }
-      },
-      "runtime" : {
-         "requires" : {
             "Data::Dumper" : "2.136",
+            "Exporter" : "5.66",
             "Scalar::Util" : "1.1",
             "Test::Deep" : "0.088",
             "Test::Exception" : "0.15",
@@ -39,6 +30,17 @@
             "overload" : "1.13",
             "strict" : "1.04",
             "warnings" : "1.12"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "Module::Build" : "0.4"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Scalar::Util" : "1.1",
+            "perl" : "v5.6.0"
          }
       }
    },

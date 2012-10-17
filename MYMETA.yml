@@ -5,7 +5,18 @@ author:
   - 'Stevan Little E<lt>stevan.little@iinteractive.comE<gt>'
   - 'Co-maintenance since V 1.02 is by Ron Savage <rsavage@cpan.org>.'
 build_requires:
-  ExtUtils::MakeMaker: 0
+  Data::Dumper: 2.136
+  Exporter: 5.66
+  Scalar::Util: 1.1
+  Test::Deep: 0.088
+  Test::Exception: 0.15
+  Test::More: 0.47
+  Test::Warn: 0.08
+  base: 2.16
+  constant: 1.21
+  overload: 1.13
+  strict: 1.04
+  warnings: 1.12
 configure_requires:
   Module::Build: 0.4
 dynamic_config: 0
@@ -29,17 +40,8 @@ provides:
     file: lib/Tree/Fast.pm
     version: 0
 requires:
-  Data::Dumper: 2.136
   Scalar::Util: 1.1
-  Test::Deep: 0.088
-  Test::Exception: 0.15
-  Test::More: 0.47
-  Test::Warn: 0.08
-  base: 2.16
-  constant: 1.21
-  overload: 1.13
-  strict: 1.04
-  warnings: 1.12
+  perl: v5.6.0
 resources:
   license: http://dev.perl.org/licenses/
 version: 1.02
