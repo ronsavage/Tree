@@ -1,9 +1,10 @@
+use lib 't/lib';
 use strict;
 use warnings;
 
 use Test::More;
 
-use t::tests qw( %runs );
+use Tests qw( %runs );
 
 plan tests => 1 + 12 * $runs{error}{plan};
 
