@@ -419,6 +419,9 @@ Tree - An N-ary tree
       value        => sub { ... },
   });
 
+  my $old_default_error_handler = $tree->error_handler(Tree->DIE);
+  my $old_object_error_handler  = $tree->error_handler($tree->DIE);
+
 =head1 DESCRIPTION
 
 This is meant to be a full-featured N-ary tree representation with

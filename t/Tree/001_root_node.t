@@ -5,7 +5,7 @@ use Test::More;
 
 use t::tests qw( %runs );
 
-plan tests => 25 + 3 * $runs{stats}{plan};
+plan tests => 26 + 3 * $runs{stats}{plan};
 
 my $CLASS = 'Tree';
 use_ok( $CLASS )
@@ -39,7 +39,10 @@ use_ok( $CLASS )
     is( $tree->root, $tree, "... and doesn't change the value" );
 
     $tree->meta->{foo} = 1;
-    is( $tree->meta->{foo}, 1, "Meta works." );
+    is( $tree->meta->{foo}, 1, "Meta works via in-situ update." );
+
+    $tree->meta({baa => 2});
+    is( ${$tree->meta}{baa}, 2, "Meta works via method call." );
 }
 
 {
