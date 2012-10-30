@@ -2,8 +2,10 @@ Revision history for Perl distribution Tree
 
 1.02  Thu Oct  4 12:10:00 2012
 	- Ron Savage is now co-maint.
-	- Patch Tree::Fast's meta() to accept a hashref so metadata can be set with $t -> meta({key => value}),
-		as well asg by directly accessing the internal hashref '_meta'.
+	- Patch Tree::Fast's value() to accept a defained value so the node's value can be set with
+		$n -> value($new_value).
+	- Patch Tree::Fast's meta() to accept a hashref so metadata can be set with $n -> meta({key => value}),
+		as well as by directly accessing the internal hashref '_meta'.
 	- Patch t/Tree/001_root_node.t to test the above.
 	- Rename Changes to CHANGES.
 	- Use ini.report.pl (shipped with Module::Metadata::Changes) to add Changelog.ini to the distro.

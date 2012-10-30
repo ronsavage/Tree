@@ -131,7 +131,10 @@ sub children {
 }
 
 sub value {
-    my $self = shift;
+    my $self        = shift;
+	my $value       = shift;
+	$self->{_value} = $value if (defined $value);
+
     return $self->{_value};
 }
 
@@ -144,9 +147,8 @@ sub set_value {
 }
 
 sub meta {
-    my $self = shift;
-    my $meta = shift;
-
+    my $self       = shift;
+    my $meta       = shift;
     $self->{_meta} = {%{$self->{_meta} }, %$meta} if ($meta && !blessed($meta) && ref($meta) eq 'HASH');
 
     return $self->{_meta};
