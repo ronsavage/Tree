@@ -1,4 +1,4 @@
-package Tree::Binary;
+package Tree::Binary2;
 
 use 5.006;
 
@@ -9,7 +9,7 @@ use Scalar::Util qw( blessed );
 
 use base qw( Tree );
 
-our $VERSION = '1.02';
+our $VERSION = '1.03';
 
 sub _init {
     my $self = shift;
@@ -203,16 +203,16 @@ __END__
 
 =head1 NAME
 
-Tree::Binary - An implementation of a binary tree
+Tree::Binary2 - An implementation of a binary tree
 
 =head1 SYNOPSIS
 
-  my $tree = Tree::Binary->new( 'root' );
+  my $tree = Tree::Binary2->new( 'root' );
 
-  my $left = Tree::Binary->new( 'left' );
+  my $left = Tree::Binary2->new( 'left' );
   $tree->left( $left );
 
-  my $right = Tree::Binary->new( 'left' );
+  my $right = Tree::Binary2->new( 'left' );
   $tree->right( $right );
 
   my $right_child = $tree->right;
@@ -259,7 +259,7 @@ If you wish to unset the child, do C<$treeE<gt>left( undef );>
 
 This will return the children of the tree.
 
-B<NOTE:> There will be two children, always. Tree::Binary implements a
+B<NOTE:> There will be two children, always. Tree::Binary2 implements a
 complete binary tree, filling in missing children with Tree::Null objects.
 (Please see L<Tree::Fast> for more information on Tree::Null.)
 
@@ -273,7 +273,7 @@ traversal order. When finished it will return false.
 
 The default traversal order is pre-order.
 
-In addition to the traversal orders provided by L<Tree>, Tree::Binary provides
+In addition to the traversal orders provided by L<Tree>, Tree::Binary2 provides
 in-order traversals.
 
 =over 4

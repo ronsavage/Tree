@@ -1,5 +1,10 @@
 Revision history for Perl distribution Tree
 
+1.03  Fri Nov  2 09:34:00 2012
+	- Rename Tree::Binary to Tree::Binary2 so it no longer clashes with the Tree::Binary shipped in the
+		Tree-Binary distro. MetaCPAN was getting confused, and automatically redirected links to this
+		module's Tree:Binary to the other one.
+
 1.02  Thu Oct  4 12:10:00 2012
 	- Ron Savage is now co-maint.
 	- Patch Tree::Fast's value() to accept a defained value so the node's value can be set with

@@ -6,21 +6,6 @@ use warnings;
 
 # ----------------------
 
-eval "use Tree::Binary;";
-
-if (! $@)
-{
-	if ( (my $version = Tree::Binary->VERSION) <= 0.07 )
-	{
-		my $tree_binary_msg = "You currently have Tree::Binary version $version installed.\nThis distribution will install an incompatible Tree::Binary module on top of it.\nDo you wish for me to continue?";
-
-		if (! Module::Build->y_n( $tree_binary_msg, 'n' ) )
-		{
-			exit;
-		}
-	}
-}
-
 Module::Build -> new
 (
 	dist_abstract => 'An N-ary tree',

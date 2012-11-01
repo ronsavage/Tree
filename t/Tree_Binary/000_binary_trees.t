@@ -8,7 +8,7 @@ use Tests qw( %runs );
 
 plan tests => 28 + 15 * $runs{stats}{plan};
 
-my $CLASS = 'Tree::Binary';
+my $CLASS = 'Tree::Binary2';
 use_ok( $CLASS )
     or Test::More->builder->BAILOUT( "Cannot load $CLASS" );
 

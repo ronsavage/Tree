@@ -7,11 +7,11 @@ use warnings FATAL => 'all';
 
 use Test::More tests => 6;
 
-use_ok( 'Tree::Binary' );
+use_ok( 'Tree::Binary2' );
 
-my $tree = Tree::Binary->new('root');
-$tree->left(Tree::Binary->new('left'));
-$tree->right(Tree::Binary->new('right'));
+my $tree = Tree::Binary2->new('root');
+$tree->left(Tree::Binary2->new('left'));
+$tree->right(Tree::Binary2->new('right'));
 
 my $clone = $tree->clone;
 
