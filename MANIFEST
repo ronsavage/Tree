@@ -2,7 +2,7 @@ Build.PL
 Changelog.ini
 CHANGES
 lib/Tree.pm
-lib/Tree/Binary.pm
+lib/Tree/Binary2.pm
 lib/Tree/Fast.pm
 Makefile.PL
 MANIFEST			This list of files
