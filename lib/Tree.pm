@@ -758,11 +758,9 @@ make it evaluate as undefined. That may be a good thing.
 
 Please q.v. L<Forest> for more info on this topic.
 
-=head1 WHAT'S NOT HERE
+=head1 FAQ
 
-=over 4
-
-=item * The Visitor pattern
+=head2 How do I implement the visitor pattern?
 
 I have deliberately chosen to not implement the Visitor pattern as described
 by Gamma et al. Given a sufficiently powerful C<traverse()> and Perl's
@@ -791,9 +789,41 @@ minutes:
       }
   }
 
+=head2 Should I implement the visitor pattern?
+
+No. You're better off using the L<Tree::DAG_Node/walk_down($options)> method.
+
+=head1 SEE ALSO
+
+=over 4
+
+=item o L<Tree::Binary>
+
+Lightweight.
+
+=item o L<Tree::DAG_Node>
+
+Lightweight, and with a long list of methods.
+
+=item o L<Tree::DAG_Node::Persist>
+
+Lightweight.
+
+=item o L<Tree::Persist>
+
+Lightweight.
+
+=item o L<Forest>
+
+Uses L<Moose>.
+
 =back
 
+C<Tree> itself is also lightweight.
+
 =head1 CODE COVERAGE
+
+These statistics are as of V 1.01.
 
 We use L<Devel::Cover> to test the code coverage of our tests. Below is the
 L<Devel::Cover> report on this module's test suite.
