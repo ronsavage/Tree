@@ -1,5 +1,8 @@
 Revision history for Perl distribution Tree.
 
+1.04  Unreleased
+	- Add README.
+
 1.03  Fri Nov  2 09:34:00 2012
 	- Rename Tree::Binary to Tree::Binary2 so it no longer clashes with the Tree::Binary shipped in the
 		Tree-Binary distro. MetaCPAN was getting confused, and automatically redirected links to this
