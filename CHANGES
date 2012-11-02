@@ -1,4 +1,4 @@
-Revision history for Perl distribution Tree
+Revision history for Perl distribution Tree.
 
 1.03  Fri Nov  2 09:34:00 2012
 	- Rename Tree::Binary to Tree::Binary2 so it no longer clashes with the Tree::Binary shipped in the
