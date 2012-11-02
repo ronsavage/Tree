@@ -760,6 +760,10 @@ Please q.v. L<Forest> for more info on this topic.
 
 =head1 FAQ
 
+=head2 Which is the best tree processing module?
+
+L<Tree::DAG_Node>. More details: L</SEE ALSO>.
+
 =head2 How do I implement the visitor pattern?
 
 I have deliberately chosen to not implement the Visitor pattern as described
