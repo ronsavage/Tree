@@ -29,13 +29,13 @@ name: Tree
 provides:
   Tree:
     file: lib/Tree.pm
-    version: 1.03
+    version: 1.04
   Tree::Binary2:
     file: lib/Tree/Binary2.pm
-    version: 1.03
+    version: 1.04
   Tree::Fast:
     file: lib/Tree/Fast.pm
-    version: 1.03
+    version: 1.04
   Tree::Null:
     file: lib/Tree/Fast.pm
     version: 0
@@ -44,4 +44,4 @@ requires:
   perl: v5.6.0
 resources:
   license: http://dev.perl.org/licenses/
-version: 1.03
+version: 1.04
