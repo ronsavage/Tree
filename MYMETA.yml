@@ -15,8 +15,8 @@ build_requires:
   base: 2.16
   constant: 1.21
   overload: 1.13
-  strict: 1.04
-  warnings: 1.12
+  strict: 0
+  warnings: 0
 configure_requires:
   Module::Build: 0.4
 dynamic_config: 0
