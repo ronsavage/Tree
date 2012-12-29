@@ -10,7 +10,7 @@ Module::Build -> new
 (
 	dist_abstract => 'An N-ary tree',
 	module_name   => 'Tree',
-	license       => 'perl_5',
+	license       => 'artistic_2',
 	requires      =>
 	{
 		perl        => '5.6.0',
