@@ -14,6 +14,7 @@ WriteMakefile
 		ABSTRACT => 'Persist multiple trees in a single db table, preserving child order',
 	) : (),
 	NAME         => 'Tree',
+	LICENSE   => 'perl_5',
 	VERSION_FROM => 'lib/Tree.pm',
 	PREREQ_PM    =>
 	{
