@@ -29,7 +29,7 @@ WriteMakefile
 		Test::Exception     => 0.15,
 		Test::Pod           => 1.45,
 		Test::Pod::Coverage => 1.08,
-		Test::Simple        => 0.47,
+		Test::More        => 0.47,
 		Test::Warn          => 0.08,
 		warnings            => 0,
 	},
