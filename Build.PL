@@ -4,7 +4,6 @@ use 5.6.0;
 
 use warnings;
 
-# ----------------------
 
 Module::Build -> new
 (
@@ -31,8 +30,8 @@ Module::Build -> new
 		strict              => 0,
 		Test::Deep          => 0.088,
 		Test::Exception     => 0.15,
-		Test::Pod           => 1.45,
-		Test::Pod::Coverage => 1.08,
+#		Test::Pod           => 1.45, # Make it optional. See t/pod.t
+#		Test::Pod::Coverage => 1.08, # Make it optional. See t/pod.t
 		Test::More        => 0.47,
 		Test::Warn          => 0.08,
 		warnings            => 0,
