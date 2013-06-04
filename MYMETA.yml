@@ -12,16 +12,16 @@ build_requires:
   Test::Exception: 0.15
   Test::More: 0.47
   Test::Warn: 0.08
-  base: 2.16
-  constant: 1.21
-  overload: 1.13
+  base: 0
+  constant: 0
+  overload: 0
   strict: 0
   warnings: 0
 configure_requires:
   Module::Build: 0.4
 dynamic_config: 0
-generated_by: 'Module::Build version 0.4003, CPAN::Meta::Converter version 2.120630'
-license: perl
+generated_by: 'Module::Build version 0.4005, CPAN::Meta::Converter version 2.120921'
+license: artistic_2
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
@@ -29,13 +29,13 @@ name: Tree
 provides:
   Tree:
     file: lib/Tree.pm
-    version: 1.04
+    version: 1.05
   Tree::Binary2:
     file: lib/Tree/Binary2.pm
-    version: 1.04
+    version: 1.05
   Tree::Fast:
     file: lib/Tree/Fast.pm
-    version: 1.04
+    version: 1.05
   Tree::Null:
     file: lib/Tree/Fast.pm
     version: 0
@@ -43,5 +43,5 @@ requires:
   Scalar::Util: 1.1
   perl: v5.6.0
 resources:
-  license: http://dev.perl.org/licenses/
-version: 1.04
+  license: http://www.perlfoundation.org/artistic_license_2_0
+version: 1.05

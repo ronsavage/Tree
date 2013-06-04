@@ -6,9 +6,9 @@
       "Co-maintenance since V 1.02 is by Ron Savage <rsavage@cpan.org>."
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120630",
+   "generated_by" : "Module::Build version 0.4005, CPAN::Meta::Converter version 2.120921",
    "license" : [
-      "perl_5"
+      "artistic_2"
    ],
    "meta-spec" : {
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
@@ -25,9 +25,9 @@
             "Test::Exception" : "0.15",
             "Test::More" : "0.47",
             "Test::Warn" : "0.08",
-            "base" : "2.16",
-            "constant" : "1.21",
-            "overload" : "1.13",
+            "base" : "0",
+            "constant" : "0",
+            "overload" : "0",
             "strict" : "0",
             "warnings" : "0"
          }
@@ -47,15 +47,15 @@
    "provides" : {
       "Tree" : {
          "file" : "lib/Tree.pm",
-         "version" : "1.04"
+         "version" : "1.05"
       },
       "Tree::Binary2" : {
          "file" : "lib/Tree/Binary2.pm",
-         "version" : "1.04"
+         "version" : "1.05"
       },
       "Tree::Fast" : {
          "file" : "lib/Tree/Fast.pm",
-         "version" : "1.04"
+         "version" : "1.05"
       },
       "Tree::Null" : {
          "file" : "lib/Tree/Fast.pm",
@@ -65,8 +65,8 @@
    "release_status" : "stable",
    "resources" : {
       "license" : [
-         "http://dev.perl.org/licenses/"
+         "http://www.perlfoundation.org/artistic_license_2_0"
       ]
    },
-   "version" : "1.04"
+   "version" : "1.05"
 }
