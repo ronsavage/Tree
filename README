@@ -9,8 +9,8 @@ ftp://ftp.info-zip.org/pub/infozip/
 
 1 Installing from a Unix-like distro
 ------------------------------------
-shell>gunzip Tree-1.03.tgz
-shell>tar mxvf Tree-1.03.tar
+shell>gunzip Tree-1.05.tgz
+shell>tar mxvf Tree-1.05.tar
 
 On Unix-like systems, assuming you have installed Module::Build V 0.25+:
 
@@ -43,7 +43,7 @@ Run Tree.pm through your favourite pod2html translator.
 
 2 Installing from an ActiveState distro
 ---------------------------------------
-shell>unzip Tree-1.03.zip
+shell>unzip Tree-1.05.zip
 shell>ppm install --location=. Tree
-shell>del Tree-1.03.ppd
-shell>del PPM-Tree-1.03.tar.gz
+shell>del Tree-1.05.ppd
+shell>del PPM-Tree-1.05.tar.gz
