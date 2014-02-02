@@ -6,7 +6,7 @@
       "Co-maintenance since V 1.02 is by Ron Savage <rsavage@cpan.org>."
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Module::Build version 0.4005, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Module::Build version 0.4204",
    "license" : [
       "artistic_2"
    ],
