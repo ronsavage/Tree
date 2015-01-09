@@ -417,7 +417,7 @@ sub node2string
 	if ($depth >= 2)
 	{
 		my($node_index) = $node -> parent -> get_index_for($node);
-		my(@daughters)  = $node -> parent -> parent -> children;
+		my(@daughters)  = $node -> parent -> children;
 
 		if ($#daughters >= 0)
 		{
