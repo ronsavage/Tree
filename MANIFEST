@@ -9,6 +9,7 @@ MANIFEST			This list of files
 META.json
 META.yml
 README
+scripts/print.tree.pl
 t/lib/Tests.pm
 t/pod.t
 t/pod_coverage.t
