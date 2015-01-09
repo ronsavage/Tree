@@ -425,7 +425,7 @@ sub node2string
 
 			if ($node_index == $last_index)
 			{
-				$indent[$_] = '    ' for (1 .. $depth - 1);
+				$indent[$depth - 2] = '    ';
 			}
 		}
 	}
