@@ -271,6 +271,8 @@ sub _null {
 
 package Tree::Null;
 
+our $VERSION = '1.06';
+
 #XXX Add this in once it's been thought out
 #our @ISA = qw( Tree );
 
