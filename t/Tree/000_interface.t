@@ -37,6 +37,7 @@ my %methods = (
         value set_value
         clone mirror traverse
         add_event_handler event
+		tree2string node2string format_node hashref2string
         meta
     )],
     private => [ qw(
