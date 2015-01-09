@@ -403,7 +403,7 @@ sub hashref2string
 
 sub node2string
 {
-	my($self, $options, $is_last_node, $node, $vert_dashes) = @_;
+	my($self, $options, $node, $vert_dashes) = @_;
 	my($depth)         = $node -> depth;
 	my($sibling_count) = defined $node -> is_root ? 1 : scalar $node -> parent -> children;
 	my($offset)        = ' ' x 4;
@@ -414,13 +414,13 @@ sub node2string
 		($sibling_count == 0 ? $offset : '   |'),
 	);
 
-	if (! $node -> is_root && $is_last_node)
+	if ($depth >= 2)
 	{
-		my(@daughters) = $node -> parent -> children;
-		my($node_uid)  = ${$node -> meta}{uid};
-		my($last_uid)  = ${$daughters[$#daughters] -> meta}{uid};
+		my($node_index) = $node -> parent -> get_index_for($node);
+		my(@daughters)  = $node -> parent -> parent -> children;
+		my($last_index) = $node -> parent -> get_index_for($daughters[$#daughters]);
 
-		if ($node_uid == $last_uid)
+		if ($node_index == $last_index)
 		{
 			$indent[$_] = '    ' for (1 .. $depth - 1);
 		}
@@ -444,7 +444,7 @@ sub tree2string
 
 	for my $i (0 .. $#nodes)
 	{
-		push @out, $self -> node2string($options, $i == $#nodes, $nodes[$i], \@vert_dashes);
+		push @out, $self -> node2string($options, $nodes[$i], \@vert_dashes);
 	}
 
 	return [@out];
@@ -684,7 +684,7 @@ Default: 0 (include attributes).
 
 =back
 
-Calls L</node2string($options, $is_last_node, $node, $vert_dashes)>.
+Calls L</node2string($options, $node, $vert_dashes)>.
 
 =head2 State Queries
 
@@ -797,7 +797,7 @@ Default: 0 (include attributes).
 
 Calls L</hashref2string($hashref)>.
 
-Called by L</node2string($options, $is_last_node, $node, $vert_dashes)>.
+Called by L</node2string($options, $node, $vert_dashes)>.
 
 You would not normally call this method.
 
@@ -809,7 +809,7 @@ Returns the given hashref as a string.
 
 Called by L</format_node($options, $node)>.
 
-=head2 node2string($options, $is_last_node, $node, $vert_dashes)
+=head2 node2string($options, $node, $vert_dashes)
 
 Returns a string of the node name and attributes, with a leading indent, suitable for printing.
 
