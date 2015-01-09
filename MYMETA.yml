@@ -5,9 +5,20 @@ author:
   - 'Stevan Little E<lt>stevan.little@iinteractive.comE<gt>'
   - 'Co-maintenance since V 1.02 is by Ron Savage <rsavage@cpan.org>.'
 build_requires:
-  ExtUtils::MakeMaker: '0'
+  Data::Dumper: '2.136'
+  Exporter: '5.66'
+  Scalar::Util: '1.1'
+  Test::Deep: '0.088'
+  Test::Exception: '0.15'
+  Test::More: '0.47'
+  Test::Warn: '0.08'
+  base: '0'
+  constant: '0'
+  overload: '0'
+  strict: '0'
+  warnings: '0'
 configure_requires:
-  ExtUtils::MakeMaker: '0'
+  Module::Build: '0.4'
 dynamic_config: 0
 generated_by: 'Module::Build version 0.421, CPAN::Meta::Converter version 2.142060'
 license: artistic_2
@@ -28,18 +39,8 @@ provides:
   Tree::Null:
     file: lib/Tree/Fast.pm
 requires:
-  Data::Dumper: '2.136'
-  Exporter: '5.66'
   Scalar::Util: '1.1'
-  Test::Deep: '0.088'
-  Test::Exception: '0.15'
-  Test::More: '0.47'
-  Test::Warn: '0.08'
-  base: '0'
-  constant: '0'
-  overload: '0'
-  strict: '0'
-  warnings: '0'
+  perl: v5.6.0
 resources:
   license: http://www.perlfoundation.org/artistic_license_2_0
 version: '1.06'
