@@ -311,12 +311,12 @@ Tree::Fast - the fastest possible implementation of a tree in pure Perl
 
 =head1 SYNOPSIS
 
-  my $tree = Tree->new( 'root' );
-  my $child = Tree->new( 'child' );
+  my $tree = Tree::Fast->new( 'root' );
+  my $child = Tree::Fast->new( 'child' );
   $tree->add_child( {}, $child );
 
-  $tree->add_child( { at => 0 }, Tree->new( 'first child' ) );
-  $tree->add_child( { at => -1 }, Tree->new( 'last child' ) );
+  $tree->add_child( { at => 0 }, Tree::Fast->new( 'first child' ) );
+  $tree->add_child( { at => -1 }, Tree::Fast->new( 'last child' ) );
 
   my @children = $tree->children;
   my @some_children = $tree->children( 0, 2 );
@@ -348,7 +348,7 @@ please look at L<Tree>, which is a wrapper around Tree::Fast.
 
 Here, [] indicate an optional parameter.
 
-This will return a C<Tree> object. It will accept one parameter which, if passed,
+This will return a C<Tree::Fast> object. It will accept one parameter which, if passed,
 will become the I<value> (accessible by C<value()>). All other parameters will be
 ignored.
 
@@ -360,7 +360,7 @@ the I<value> of the clone to $value.
 This will return a clone of C<$tree>. The clone will be a root tree, but all
 children will be cloned.
 
-If you call C<< Tree->clone([$value]) >>, it will instead call C<new()>.
+If you call C<< Tree::Fast->clone([$value]) >>, it will instead call C<new()>.
 
 B<NOTE:> the value is merely a shallow copy. This means that all references
 will be kept.
@@ -483,7 +483,7 @@ This will help prevent clobbering of metadata.
 
 If you call C<< $self->parent >> on a root node, it will return a Tree::Null
 object. This is an implementation of the Null Object pattern optimized for
-usage with L<Tree>. It will evaluate as false in every case (using
+usage with L<Tree::Fast>. It will evaluate as false in every case (using
 I<overload>) and all methods called on it will return a Tree::Null object.
 
 =head2 Notes

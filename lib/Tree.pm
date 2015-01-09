@@ -376,6 +376,84 @@ sub _strip_options {
     }
 }
 
+# -----------------------------------------------
+
+sub format_node
+{
+	my($self, $options, $node) = @_;
+	my($s) = $node -> value;
+	$s     .= '. Attributes: ' . $self -> hashref2string($node -> meta) if (! $$options{no_attributes});
+
+	return $s;
+
+} # End of format_node.
+
+# -----------------------------------------------
+
+sub hashref2string
+{
+	my($self, $hashref) = @_;
+	$hashref ||= {};
+
+	return '{' . join(', ', map{qq|$_ => "$$hashref{$_}"|} sort keys %$hashref) . '}';
+
+} # End of hashref2string.
+
+# -----------------------------------------------
+
+sub node2string
+{
+	my($self, $options, $is_last_node, $node, $vert_dashes) = @_;
+	my($depth)         = $node -> depth;
+	my($sibling_count) = defined $node -> is_root ? 1 : scalar $node -> parent -> children;
+	my($offset)        = ' ' x 4;
+	my(@indent)        = map{$$vert_dashes[$_] || $offset} 0 .. $depth - 1;
+	@$vert_dashes      =
+	(
+		@indent,
+		($sibling_count == 0 ? $offset : '   |'),
+	);
+
+	if (! $node -> is_root && $is_last_node)
+	{
+		my(@daughters) = $node -> parent -> children;
+		my($node_uid)  = ${$node -> meta}{uid};
+		my($last_uid)  = ${$daughters[$#daughters] -> meta}{uid};
+
+		if ($node_uid == $last_uid)
+		{
+			$indent[$_] = '    ' for (1 .. $depth - 1);
+		}
+	}
+
+	return join('', @indent[1 .. $#indent]) . ($depth ? '   |--- ' : '') . $self -> format_node($options, $node);
+
+} # End of node2string.
+
+# ------------------------------------------------
+
+sub tree2string
+{
+	my($self, $options, $tree) = @_;
+	$options                   ||= {};
+	$$options{no_attributes}   ||= 0;
+	$tree                      ||= $self -> tree;
+	my(@nodes)                 = $tree -> traverse;
+
+	my(@out);
+	my(@vert_dashes);
+
+	for my $i (0 .. $#nodes)
+	{
+		push @out, $self -> node2string($options, $i == $#nodes, $nodes[$i], \@vert_dashes);
+	}
+
+	return [@out];
+
+} # End of tree2string.
+
+# -----------------------------------------------
+
 1;
 __END__
 
