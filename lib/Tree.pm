@@ -434,11 +434,10 @@ sub node2string
 
 sub tree2string
 {
-	my($self, $options, $tree) = @_;
-	$options                   ||= {};
-	$$options{no_attributes}   ||= 0;
-	$tree                      ||= $self -> tree;
-	my(@nodes)                 = $tree -> traverse;
+	my($self, $options)      = @_;
+	$options                 ||= {};
+	$$options{no_attributes} ||= 0;
+	my(@nodes)               = $tree -> traverse;
 
 	my(@out);
 	my(@vert_dashes);
@@ -572,8 +571,8 @@ remove_child() resets last_error() upon entry.
 This will modify the tree such that it is a mirror of what it was before. This
 means that the order of all children is reversed.
 
-B<NOTE>: This is a destructive action. It I<will> modify the tree's internal
-structure. If you wish to get a mirror, yet keep the original tree intact, use
+B<NOTE>: This is a destructive action. It I<will> modify the internal structure
+of the tree. If you wish to get a mirror, yet keep the original tree intact, use
 C<< my $mirror = $tree->clone->mirror >>.
 
 mirror() does not reset last_error() because it (mirror() ) is implemented in L<Tree::Fast>,
@@ -614,6 +613,78 @@ Use C<< $tree->LEVEL_ORDER >> as the C<$order>.
 
 traverse() does not reset last_error() because it (traverse() ) is implemented in L<Tree::Fast>,
 which has no error handling.
+
+=head2 tree2string($options)
+
+Here, the [] represent an optional parameter.
+
+Returns an arrayref of lines, suitable for printing. These lines do not end in "\n".
+
+Draws a nice ASCII-art representation of the tree structure.
+
+The tree looks like:
+
+	Root. Attributes: {# => "0"}
+	   |--- I. Attributes: {# => "1"}
+	   |   |--- J. Attributes: {# => "3"}
+	   |   |   |--- K. Attributes: {# => "3"}
+	   |   |--- J. Attributes: {# => "4"}
+	   |       |--- L. Attributes: {# => "5"}
+	   |           |--- M. Attributes: {# => "5"}
+	   |               |--- N. Attributes: {# => "5"}
+	   |                   |--- O. Attributes: {# => "5"}
+	   |--- H. Attributes: {# => "2"}
+	   |   |--- J. Attributes: {# => "3"}
+	   |   |   |--- K. Attributes: {# => "3"}
+	   |   |--- J. Attributes: {# => "4"}
+	   |       |--- L. Attributes: {# => "5"}
+	   |           |--- M. Attributes: {# => "5"}
+	   |               |--- N. Attributes: {# => "5"}
+	   |                   |--- O. Attributes: {# => "5"}
+
+Or, without attributes:
+
+	Root
+	   |--- I
+	   |   |--- J
+	   |   |   |--- K
+	   |   |--- J
+	   |       |--- L
+	   |           |--- M
+	   |               |--- N
+	   |                   |--- O
+	   |--- H
+	   |   |--- J
+	   |   |   |--- K
+	   |   |--- J
+	   |       |--- L
+	   |           |--- M
+	   |               |--- N
+	   |                   |--- O
+
+See scripts/samples.pl.
+
+Example usage:
+
+  print map("$_\n", @{$tree -> tree2string});
+
+Can be called with $some_tree set to any $node, and will print the tree assuming $node is the root.
+
+If you do not wish to supply options, use tree2string({}, $node).
+
+Possible keys in the $options hashref (which defaults to {}):
+
+=over 4
+
+=item o no_attributes => $Boolean
+
+If 1, the node attributes are not included in the string returned.
+
+Default: 0 (include attributes).
+
+=back
+
+Calls L</node2string($options, $is_last_node, $node, $vert_dashes)>.
 
 =head2 State Queries
 
@@ -676,7 +747,7 @@ a width equal to the sum of all the widths of its children.
 This will return the depth of C<$tree>. A root has a depth of 0. A child has
 the depth of its parent, plus 1.
 
-This is the distance from the root. It's useful for things like
+This is the distance from the root. It is useful for things like
 pretty-printing the tree.
 
 =head2 size()
@@ -707,6 +778,58 @@ It is recommended that you store your metadata in a subhashref and not in the
 top-level metadata hashref, keyed by your package name. L<Tree::Persist> does
 this, using a unique key for each persistence layer associated with that tree.
 This will help prevent clobbering of metadata.
+
+=head2 format_node($options, $node)
+
+Returns a string consisting of the node's name and, optionally, it's attributes.
+
+Possible keys in the $options hashref:
+
+=over 4
+
+=item o no_attributes => $Boolean
+
+If 1, the node attributes are not included in the string returned.
+
+Default: 0 (include attributes).
+
+=back
+
+Calls L</hashref2string($hashref)>.
+
+Called by L</node2string($options, $is_last_node, $node, $vert_dashes)>.
+
+You would not normally call this method.
+
+If you do not wish to supply options, use format_node({}, $node).
+
+=head2 hashref2string($hashref)
+
+Returns the given hashref as a string.
+
+Called by L</format_node($options, $node)>.
+
+=head2 node2string($options, $is_last_node, $node, $vert_dashes)
+
+Returns a string of the node name and attributes, with a leading indent, suitable for printing.
+
+Possible keys in the $options hashref:
+
+=over 4
+
+=item o no_attributes => $Boolean
+
+If 1, the node attributes are not included in the string returned.
+
+Default: 0 (include attributes).
+
+=back
+
+Ignore the parameter $vert_dashes. The code uses it as temporary storage.
+
+Calls L</format_node($options, $node)>.
+
+Called by L</tree2string($options)>.
 
 =head1 ERROR HANDLING
 
@@ -827,7 +950,7 @@ The Tree::Null object is a singleton.
 
 =item *
 
-The Tree::Null object I<is> defined, though. I couldn't find a way to
+The Tree::Null object I<is> defined, though. I could not find a way to
 make it evaluate as undefined. That may be a good thing.
 
 =back
@@ -845,9 +968,9 @@ L<Tree::DAG_Node>. More details: L</SEE ALSO>.
 =head2 How do I implement the visitor pattern?
 
 I have deliberately chosen to not implement the Visitor pattern as described
-by Gamma et al. Given a sufficiently powerful C<traverse()> and Perl's
-capabilities, an explicit visitor object is almost always unneeded. If you
-want one, it's easy to write one yourself. Here's a simple one I wrote in 5
+by Gamma et al. Given a sufficiently powerful C<traverse()> and the capabilities
+of Perl, an explicit visitor object is almost always unneeded. If you
+want one, it is easy to write one yourself. Here is a simple one I wrote in 5
 minutes:
 
   package My::Visitor;
@@ -873,7 +996,7 @@ minutes:
 
 =head2 Should I implement the visitor pattern?
 
-No. You're better off using the L<Tree::DAG_Node/walk_down($options)> method.
+No. You are better off using the L<Tree::DAG_Node/walk_down($options)> method.
 
 =head1 SEE ALSO
 
