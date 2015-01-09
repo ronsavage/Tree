@@ -405,32 +405,21 @@ sub node2string
 {
 	my($self, $options, $node, $vert_dashes) = @_;
 	my($depth)         = $node -> depth;
-	my($sibling_count) = defined $node -> is_root ? 1 : scalar $node -> parent -> children;
+	my(@siblings)      = $node -> parent -> children;
+	my($sibling_count) = scalar @siblings; # Warning: Don't combine this with the previous line.
 	my($offset)        = ' ' x 4;
 	my(@indent)        = map{$$vert_dashes[$_] || $offset} 0 .. $depth - 1;
 	@$vert_dashes      =
 	(
 		@indent,
-		($sibling_count == 0 ? $offset : '   |'),
+		($sibling_count == 0 ? $offset : '    |'),
 	);
 
-	if ($depth >= 2)
-	{
-		my($node_index) = $node -> parent -> get_index_for($node);
-		my(@daughters)  = $node -> parent -> children;
+	my(@i)                = $node -> parent -> get_index_for($node);
+	my(@indexes)          = $node -> parent -> get_index_for($node);
+	$$vert_dashes[$depth] = ($offset . ' ') if ($sibling_count == ($indexes[0] + 1) );
 
-		if ($#daughters >= 0)
-		{
-			my($last_index) = $node -> parent -> get_index_for($daughters[$#daughters]);
-
-			if ($node_index == $last_index)
-			{
-				$indent[$depth - 2] = '    ';
-			}
-		}
-	}
-
-	return join('', @indent[1 .. $#indent]) . ($depth ? '   |--- ' : '') . $self -> format_node($options, $node);
+	return join('', @indent[1 .. $#indent]) . ($depth ? '    |--- ' : '') . $self -> format_node($options, $node);
 
 } # End of node2string.
 
