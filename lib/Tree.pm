@@ -437,7 +437,7 @@ sub tree2string
 	my($self, $options)      = @_;
 	$options                 ||= {};
 	$$options{no_attributes} ||= 0;
-	my(@nodes)               = $tree -> traverse;
+	my(@nodes)               = $self -> traverse;
 
 	my(@out);
 	my(@vert_dashes);
