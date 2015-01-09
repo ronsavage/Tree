@@ -5,43 +5,42 @@ author:
   - 'Stevan Little E<lt>stevan.little@iinteractive.comE<gt>'
   - 'Co-maintenance since V 1.02 is by Ron Savage <rsavage@cpan.org>.'
 build_requires:
-  Data::Dumper: 2.136
-  Exporter: 5.66
-  Scalar::Util: 1.1
-  Test::Deep: 0.088
-  Test::Exception: 0.15
-  Test::More: 0.47
-  Test::Warn: 0.08
-  base: 0
-  constant: 0
-  overload: 0
-  strict: 0
-  warnings: 0
+  Data::Dumper: '2.136'
+  Exporter: '5.66'
+  Scalar::Util: '1.1'
+  Test::Deep: '0.088'
+  Test::Exception: '0.15'
+  Test::More: '0.47'
+  Test::Warn: '0.08'
+  base: '0'
+  constant: '0'
+  overload: '0'
+  strict: '0'
+  warnings: '0'
 configure_requires:
-  Module::Build: 0.4
+  Module::Build: '0.4'
 dynamic_config: 1
-generated_by: 'Module::Build version 0.4005, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Module::Build version 0.421, CPAN::Meta::Converter version 2.142060'
 license: artistic_2
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
-  version: 1.4
+  version: '1.4'
 name: Tree
 provides:
   Tree:
     file: lib/Tree.pm
-    version: 1.05
+    version: '1.06'
   Tree::Binary2:
     file: lib/Tree/Binary2.pm
-    version: 1.05
+    version: '1.06'
   Tree::Fast:
     file: lib/Tree/Fast.pm
-    version: 1.05
+    version: '1.06'
   Tree::Null:
     file: lib/Tree/Fast.pm
-    version: 0
 requires:
-  Scalar::Util: 1.1
+  Scalar::Util: '1.1'
   perl: v5.6.0
 resources:
   license: http://www.perlfoundation.org/artistic_license_2_0
-version: 1.05
+version: '1.06'

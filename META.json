@@ -6,7 +6,7 @@
       "Co-maintenance since V 1.02 is by Ron Savage <rsavage@cpan.org>."
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.4005, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Module::Build version 0.421",
    "license" : [
       "artistic_2"
    ],
@@ -47,19 +47,18 @@
    "provides" : {
       "Tree" : {
          "file" : "lib/Tree.pm",
-         "version" : "1.05"
+         "version" : "1.06"
       },
       "Tree::Binary2" : {
          "file" : "lib/Tree/Binary2.pm",
-         "version" : "1.05"
+         "version" : "1.06"
       },
       "Tree::Fast" : {
          "file" : "lib/Tree/Fast.pm",
-         "version" : "1.05"
+         "version" : "1.06"
       },
       "Tree::Null" : {
-         "file" : "lib/Tree/Fast.pm",
-         "version" : 0
+         "file" : "lib/Tree/Fast.pm"
       }
    },
    "release_status" : "stable",
@@ -68,5 +67,5 @@
          "http://www.perlfoundation.org/artistic_license_2_0"
       ]
    },
-   "version" : "1.05"
+   "version" : "1.06"
 }
