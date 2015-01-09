@@ -37,6 +37,7 @@ sub tree
 	$node{O} -> add_child($node{P});
 	$node{P} -> add_child($node{Q});
 
+	print map("$_\n", @{$tree -> tree2string});
 	print map("$_\n", @{$tree -> tree2string({no_attributes => 1})});
 
 } # End of tree.
@@ -74,6 +75,7 @@ sub tree_dag_node
 	$node{O} -> add_daughter($node{P});
 	$node{P} -> add_daughter($node{Q});
 
+	print map("$_\n", @{$tree -> tree2string});
 	print map("$_\n", @{$tree -> tree2string({no_attributes => 1})});
 
 } # End of tree_dag_node.

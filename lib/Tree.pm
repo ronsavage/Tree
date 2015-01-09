@@ -609,61 +609,45 @@ which has no error handling.
 
 =head2 tree2string($options)
 
-Here, the [] represent an optional parameter.
-
 Returns an arrayref of lines, suitable for printing. These lines do not end in "\n".
 
 Draws a nice ASCII-art representation of the tree structure.
 
 The tree looks like:
 
-	Root. Attributes: {# => "0"}
-	   |--- I. Attributes: {# => "1"}
-	   |   |--- J. Attributes: {# => "3"}
-	   |   |   |--- K. Attributes: {# => "3"}
-	   |   |--- J. Attributes: {# => "4"}
-	   |       |--- L. Attributes: {# => "5"}
-	   |           |--- M. Attributes: {# => "5"}
-	   |               |--- N. Attributes: {# => "5"}
-	   |                   |--- O. Attributes: {# => "5"}
-	   |--- H. Attributes: {# => "2"}
-	   |   |--- J. Attributes: {# => "3"}
-	   |   |   |--- K. Attributes: {# => "3"}
-	   |   |--- J. Attributes: {# => "4"}
-	   |       |--- L. Attributes: {# => "5"}
-	   |           |--- M. Attributes: {# => "5"}
-	   |               |--- N. Attributes: {# => "5"}
-	   |                   |--- O. Attributes: {# => "5"}
+Root. Attributes: {uid => "0"}
+    |--- H. Attributes: {uid => "1"}
+    |    |--- I. Attributes: {uid => "2"}
+    |    |    |--- J. Attributes: {uid => "3"}
+    |    |--- K. Attributes: {uid => "4"}
+    |    |--- L. Attributes: {uid => "5"}
+    |--- M. Attributes: {uid => "6"}
+    |--- N. Attributes: {uid => "7"}
+         |--- O. Attributes: {uid => "8"}
+              |--- P. Attributes: {uid => "9"}
+                   |--- Q. Attributes: {uid => "10"}
 
 Or, without attributes:
 
-	Root
-	   |--- I
-	   |   |--- J
-	   |   |   |--- K
-	   |   |--- J
-	   |       |--- L
-	   |           |--- M
-	   |               |--- N
-	   |                   |--- O
-	   |--- H
-	   |   |--- J
-	   |   |   |--- K
-	   |   |--- J
-	   |       |--- L
-	   |           |--- M
-	   |               |--- N
-	   |                   |--- O
+Root
+    |--- H
+    |    |--- I
+    |    |    |--- J
+    |    |--- K
+    |    |--- L
+    |--- M
+    |--- N
+         |--- O
+              |--- P
+                   |--- Q
 
-See scripts/samples.pl.
+See scripts/print.tree.pl.
 
 Example usage:
 
   print map("$_\n", @{$tree -> tree2string});
 
-Can be called with $some_tree set to any $node, and will print the tree assuming $node is the root.
-
-If you do not wish to supply options, use tree2string({}, $node).
+If you do not wish to supply options, use C<tree2string()> or C<tree2string({})>.
 
 Possible keys in the $options hashref (which defaults to {}):
 
