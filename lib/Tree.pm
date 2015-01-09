@@ -1027,6 +1027,10 @@ L<Devel::Cover> report on this module's test suite.
 
 =back
 
+=head1 Repository
+
+L<https://github.com/ronsavage/Tree>
+
 =head1 SUPPORT
 
 The mailing list is at L<TreeCPAN@googlegroups.com>. I also read
