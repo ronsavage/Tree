@@ -1,6 +1,10 @@
 Revision history for Perl distribution Tree.
 
-1.05  Wed Jun  5 08:34:00 2013
+1.06  Fri Jan  9 13:24:00 2014
+	- Add methods and docs for tree2string(), node2string(), format_node(), hashref2string().
+		Only tree2string() is normally called by end users.
+
+1.05  Wed Jun  5 08:34:00 2014
 	- No code changes.
 	- For pre-reqs base, constant and overload, which ship with Perl, set the version # to 0.
 		Requested by Andreas Mock. Actually, I should have done this with version 1.04.
