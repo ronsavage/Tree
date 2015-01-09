@@ -29,19 +29,18 @@ name: Tree
 provides:
   Tree:
     file: lib/Tree.pm
-    version: '1.05'
+    version: '1.06'
   Tree::Binary2:
     file: lib/Tree/Binary2.pm
-    version: '1.05'
+    version: '1.06'
   Tree::Fast:
     file: lib/Tree/Fast.pm
-    version: '1.05'
+    version: '1.06'
   Tree::Null:
     file: lib/Tree/Fast.pm
-    version: '0'
 requires:
   Scalar::Util: '1.1'
   perl: v5.6.0
 resources:
   license: http://www.perlfoundation.org/artistic_license_2_0
-version: '1.05'
+version: '1.06'
