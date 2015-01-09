@@ -1,5 +1,11 @@
 Revision history for Perl distribution Tree.
 
+1.07  Fri Jan 10 21:39:00 2014
+	- Not released
+	- Integrate with github.
+	- Make Build.PL and Makefile.PL look like all my other ones, including using strict and
+		warnings.
+
 1.06  Fri Jan  9 13:24:00 2014
 	- Add methods and docs for tree2string(), node2string(), format_node(), hashref2string().
 		Only tree2string() is normally called by end users.

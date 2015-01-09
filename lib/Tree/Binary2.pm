@@ -9,7 +9,7 @@ use Scalar::Util qw( blessed );
 
 use base qw( Tree );
 
-our $VERSION = '1.06';
+our $VERSION = '1.07';
 
 sub _init {
     my $self = shift;

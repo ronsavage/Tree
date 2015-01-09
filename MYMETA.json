@@ -6,7 +6,7 @@
       "Co-maintenance since V 1.02 is by Ron Savage <rsavage@cpan.org>."
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Module::Build version 0.421",
+   "generated_by" : "Module::Build version 0.421, CPAN::Meta::Converter version 2.142060",
    "license" : [
       "artistic_2"
    ],
@@ -17,6 +17,16 @@
    "name" : "Tree",
    "prereqs" : {
       "build" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "0"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "0"
+         }
+      },
+      "runtime" : {
          "requires" : {
             "Data::Dumper" : "2.136",
             "Exporter" : "5.66",
@@ -30,17 +40,6 @@
             "overload" : "0",
             "strict" : "0",
             "warnings" : "0"
-         }
-      },
-      "configure" : {
-         "requires" : {
-            "Module::Build" : "0.4"
-         }
-      },
-      "runtime" : {
-         "requires" : {
-            "Scalar::Util" : "1.1",
-            "perl" : "v5.6.0"
          }
       }
    },
