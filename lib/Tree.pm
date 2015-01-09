@@ -418,11 +418,15 @@ sub node2string
 	{
 		my($node_index) = $node -> parent -> get_index_for($node);
 		my(@daughters)  = $node -> parent -> parent -> children;
-		my($last_index) = $node -> parent -> get_index_for($daughters[$#daughters]);
 
-		if ($node_index == $last_index)
+		if ($#daughters >= 0)
 		{
-			$indent[$_] = '    ' for (1 .. $depth - 1);
+			my($last_index) = $node -> parent -> get_index_for($daughters[$#daughters]);
+
+			if ($node_index == $last_index)
+			{
+				$indent[$_] = '    ' for (1 .. $depth - 1);
+			}
 		}
 	}
 
