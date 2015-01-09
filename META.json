@@ -1,9 +1,7 @@
 {
    "abstract" : "An N-ary tree",
    "author" : [
-      "Rob Kinyon E<lt>rob.kinyon@iinteractive.comE<gt>",
-      "Stevan Little E<lt>stevan.little@iinteractive.comE<gt>",
-      "Co-maintenance since V 1.02 is by Ron Savage <rsavage@cpan.org>."
+      "Ron Savage <ron@savage.net.au>"
    ],
    "dynamic_config" : 1,
    "generated_by" : "Module::Build version 0.421",
@@ -47,25 +45,29 @@
    "provides" : {
       "Tree" : {
          "file" : "lib/Tree.pm",
-         "version" : "1.06"
+         "version" : "1.07"
       },
       "Tree::Binary2" : {
          "file" : "lib/Tree/Binary2.pm",
-         "version" : "1.06"
+         "version" : "1.07"
       },
       "Tree::Fast" : {
          "file" : "lib/Tree/Fast.pm",
-         "version" : "1.06"
+         "version" : "1.07"
       },
       "Tree::Null" : {
-         "file" : "lib/Tree/Fast.pm"
+         "file" : "lib/Tree/Fast.pm",
+         "version" : "1.07"
       }
    },
    "release_status" : "stable",
    "resources" : {
       "license" : [
          "http://www.perlfoundation.org/artistic_license_2_0"
-      ]
+      ],
+      "repository" : {
+         "url" : "https://github.com/ronsavage/Tree"
+      }
    },
-   "version" : "1.06"
+   "version" : "1.07"
 }

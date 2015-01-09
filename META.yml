@@ -1,9 +1,7 @@
 ---
 abstract: 'An N-ary tree'
 author:
-  - 'Rob Kinyon E<lt>rob.kinyon@iinteractive.comE<gt>'
-  - 'Stevan Little E<lt>stevan.little@iinteractive.comE<gt>'
-  - 'Co-maintenance since V 1.02 is by Ron Savage <rsavage@cpan.org>.'
+  - 'Ron Savage <ron@savage.net.au>'
 build_requires:
   Data::Dumper: '2.136'
   Exporter: '5.66'
@@ -29,18 +27,20 @@ name: Tree
 provides:
   Tree:
     file: lib/Tree.pm
-    version: '1.06'
+    version: '1.07'
   Tree::Binary2:
     file: lib/Tree/Binary2.pm
-    version: '1.06'
+    version: '1.07'
   Tree::Fast:
     file: lib/Tree/Fast.pm
-    version: '1.06'
+    version: '1.07'
   Tree::Null:
     file: lib/Tree/Fast.pm
+    version: '1.07'
 requires:
   Scalar::Util: '1.1'
   perl: v5.6.0
 resources:
   license: http://www.perlfoundation.org/artistic_license_2_0
-version: '1.06'
+  repository: https://github.com/ronsavage/Tree
+version: '1.07'
