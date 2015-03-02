@@ -34,24 +34,24 @@ $class -> new
 	dist_author    => 'Ron Savage <ron@savage.net.au>',
 	build_requires =>
 	{
-		'base'                => 0,
-		'constant'            => 0,
-		'Data::Dumper'        => 2.136,
-		'Exporter'            => 5.66,
-		'overload'            => 0,
-		'Scalar::Util'        => 1.10,
-		'strict'              => 0,
-		'Test::Deep'          => 0.088,
-		'Test::Exception'     => 0.15,
-#		'Test::Pod'           => 1.45, # Make it optional. See t/pod.t
-#		'Test::Pod::Coverage' => 1.08, # Make it optional. See t/pod.t
-		'Test::More'          => 0.47,
-		'Test::Warn'          => 0.08,
-		'warnings'            => 0,
+		'base' => 0,
+		'constant' => 0,
+		'Data::Dumper' => 2.136,
+		'Exporter' => 5.66,
+		'overload' => 0,
+		'Scalar::Util' => 1.10,
+		'strict' => 0,
+		'Test::Deep' => 0.088,
+		'Test::Exception' => 0.15,
+		'Test::Pod' => 1.48,
+		'Test::Pod::Coverage' => 1.10,
+		'Test::More' => 1.001014,
+		'Test::Warn' => 0.08,
+		'warnings' => 0,
 	},
 	configure_requires =>
 	{
-		'Module::Build' => 0.40,
+		'Module::Build' => 0.4211,
 	},
 	meta_merge =>
 	{
@@ -62,17 +62,17 @@ $class -> new
 	},
 	requires      =>
 	{
-		'perl'        => '5.6.0',
+		'perl' => '5.6.0',
 		'Scalar::Util' => 1.10,
 	},
-	recursive_test_files => 1,
+	'recursive_test_files' => 1,
 	add_to_cleanup       =>
 	[
 		'META.yml', '*.bak', '*.gz', 'Makefile.PL',
 	],
 	resources =>
 	{
-		bugtracker => 'https://rt.cpan.org/Public/Dist/Display.html?Name=Tree',
-		license    => 'http://opensource.org/licenses/Artistic-2.0',
+		'bugtracker' => 'https://rt.cpan.org/Public/Dist/Display.html?Name=Tree',
+		'license' => 'http://opensource.org/licenses/Artistic-2.0',
 	},
 ) -> create_build_script;

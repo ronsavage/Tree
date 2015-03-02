@@ -32,27 +32,27 @@ my(%params) =
 	LICENSE      => 'artistic_2',
 	PREREQ_PM    =>
 	{
-		'base'                => 0,
-		'constant'            => 0,
-		'Data::Dumper'        => 2.136,
-		'Exporter'            => 5.66,
-		'overload'            => 0,
-		'Scalar::Util'        => 1.10,
-		'strict'              => 0,
-		'Test::Deep'          => 0.088,
-		'Test::Exception'     => 0.15,
-#		'Test::Pod'           => 1.45, # Make it optional. See t/pod.t
-#		'Test::Pod::Coverage' => 1.08, # Make it optional. See t/pod.t
-		'Test::More'          => 0.47,
-		'Test::Warn'          => 0.08,
-		'warnings'            => 0,
+		'base' => 0,
+		'constant' => 0,
+		'Data::Dumper' => 2.136,
+		'Exporter' => 5.66,
+		'overload' => 0,
+		'Scalar::Util' => 1.10,
+		'strict' => 0,
+		'Test::Deep' => 0.088,
+		'Test::Exception' => 0.15,
+		'Test::Pod' => 1.48,
+		'Test::Pod::Coverage' => 1.10,
+		'Test::More' => 1.001014,
+		'Test::Warn' => 0.08,
+		'warnings' => 0,
 	},
 	VERSION_FROM => 'lib/Tree.pm',
 	INSTALLDIRS => 'site',
-	EXE_FILES   => [],
+	EXE_FILES => [],
 	test        =>
 	{
-		TESTS => 't/*.t t/Tree_Binary/*.t t/Tree/*.t t/Tree_Fast/*.t',
+		'TESTS' => 't/*.t t/Tree_Binary/*.t t/Tree/*.t t/Tree_Fast/*.t',
 	},
 );
 
@@ -67,17 +67,17 @@ if ($ExtUtils::MakeMaker::VERSION ge '6.46')
 	{
 		'meta-spec' =>
 		{
-			version => 2,
+		'version' => 2,
 		},
 		resources   =>
 		{
-			bugtracker => 'https://rt.cpan.org/Public/Dist/Display.html?Name=Tree',
-			license    => 'http://opensource.org/licenses/Artistic-2.0',
+		'bugtracker' => 'https://rt.cpan.org/Public/Dist/Display.html?Name=Tree',
+		'license' => 'http://opensource.org/licenses/Artistic-2.0',
 			repository =>
 			{
-				type => 'git',
-				url  => 'https://github.com/ronsavage/Tree.git',
-				web  => 'https://github.com/ronsavage/Tree',
+		'type' => 'git',
+		'url' => 'https://github.com/ronsavage/Tree.git',
+		'web' => 'https://github.com/ronsavage/Tree',
 			},
 		},
 	};
