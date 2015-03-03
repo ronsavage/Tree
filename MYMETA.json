@@ -4,7 +4,7 @@
       "Ron Savage <ron@savage.net.au>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Module::Build version 0.4211",
+   "generated_by" : "Module::Build version 0.421, CPAN::Meta::Converter version 2.143240",
    "license" : [
       "artistic_2"
    ],
@@ -16,31 +16,30 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Data::Dumper" : 2.136,
-            "Exporter" : 5.66,
-            "Scalar::Util" : 1.1,
-            "Test::Deep" : 0.088,
-            "Test::Exception" : 0.15,
-            "Test::More" : 1.001014,
-            "Test::Pod" : 1.48,
-            "Test::Pod::Coverage" : 1.48,
-            "Test::Warn" : 0.08,
+            "ExtUtils::MakeMaker" : "0"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "0"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Data::Dumper" : "2.136",
+            "Exporter" : "5.66",
+            "Scalar::Util" : "1.1",
+            "Test::Deep" : "0.088",
+            "Test::Exception" : "0.15",
+            "Test::More" : "1.001014",
+            "Test::Pod" : "1.48",
+            "Test::Pod::Coverage" : "1.1",
+            "Test::Warn" : "0.08",
             "base" : "0",
             "constant" : "0",
             "overload" : "0",
             "strict" : "0",
             "warnings" : "0"
-         }
-      },
-      "configure" : {
-         "requires" : {
-            "Module::Build" : 0.4211
-         }
-      },
-      "runtime" : {
-         "requires" : {
-            "Scalar::Util" : 1.1,
-            "perl" : "v5.6.0"
          }
       }
    },
