@@ -4,7 +4,7 @@
       "Ron Savage <ron@savage.net.au>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.421",
+   "generated_by" : "Module::Build version 0.4211",
    "license" : [
       "artistic_2"
    ],
@@ -21,7 +21,9 @@
             "Scalar::Util" : "1.1",
             "Test::Deep" : "0.088",
             "Test::Exception" : "0.15",
-            "Test::More" : "0.47",
+            "Test::More" : "1.001014",
+            "Test::Pod" : "1.48",
+            "Test::Pod::Coverage" : "1.1",
             "Test::Warn" : "0.08",
             "base" : "0",
             "constant" : "0",
@@ -32,7 +34,7 @@
       },
       "configure" : {
          "requires" : {
-            "Module::Build" : "0.4"
+            "Module::Build" : "0.4211"
          }
       },
       "runtime" : {
@@ -45,7 +47,7 @@
    "provides" : {
       "Tree" : {
          "file" : "lib/Tree.pm",
-         "version" : "1.07"
+         "version" : "1.08"
       },
       "Tree::Binary2" : {
          "file" : "lib/Tree/Binary2.pm",
@@ -69,5 +71,5 @@
          "url" : "https://github.com/ronsavage/Tree"
       }
    },
-   "version" : "1.07"
+   "version" : "1.08"
 }
