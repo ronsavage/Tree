@@ -5,7 +5,7 @@ use 5.006;
 use strict;
 use warnings FATAL => 'all';
 
-our $VERSION = '1.07';
+our $VERSION = '1.08';
 
 use Scalar::Util qw( blessed refaddr weaken );
 
@@ -615,31 +615,31 @@ Draws a nice ASCII-art representation of the tree structure.
 
 The tree looks like:
 
-Root. Attributes: {uid => "0"}
-    |--- H. Attributes: {uid => "1"}
-    |    |--- I. Attributes: {uid => "2"}
-    |    |    |--- J. Attributes: {uid => "3"}
-    |    |--- K. Attributes: {uid => "4"}
-    |    |--- L. Attributes: {uid => "5"}
-    |--- M. Attributes: {uid => "6"}
-    |--- N. Attributes: {uid => "7"}
-         |--- O. Attributes: {uid => "8"}
-              |--- P. Attributes: {uid => "9"}
-                   |--- Q. Attributes: {uid => "10"}
+	Root. Attributes: {uid => "0"}
+	    |--- H. Attributes: {uid => "1"}
+	    |    |--- I. Attributes: {uid => "2"}
+	    |    |    |--- J. Attributes: {uid => "3"}
+	    |    |--- K. Attributes: {uid => "4"}
+	    |    |--- L. Attributes: {uid => "5"}
+	    |--- M. Attributes: {uid => "6"}
+	    |--- N. Attributes: {uid => "7"}
+	         |--- O. Attributes: {uid => "8"}
+	              |--- P. Attributes: {uid => "9"}
+	                   |--- Q. Attributes: {uid => "10"}
 
 Or, without attributes:
 
-Root
-    |--- H
-    |    |--- I
-    |    |    |--- J
-    |    |--- K
-    |    |--- L
-    |--- M
-    |--- N
-         |--- O
-              |--- P
-                   |--- Q
+	Root
+	    |--- H
+	    |    |--- I
+	    |    |    |--- J
+	    |    |--- K
+	    |    |--- L
+	    |--- M
+	    |--- N
+	         |--- O
+	              |--- P
+	                   |--- Q
 
 See scripts/print.tree.pl.
 
