@@ -6,6 +6,7 @@ Revision history for Perl distribution Tree.
 		Tree.pm. This corrects a mistake made by me (Ron).
 	- Reformat the dates in this file.
 	- Move the files t/pod_coverage.t and t/pod.t into xt/author/.
+	- Remove .gitignore from MANFIEST and put it in MANIFEST.SKIP.
 
 1.07  2014-01-10T21:39:00
 	- Not released
