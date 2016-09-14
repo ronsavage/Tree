@@ -2,14 +2,13 @@ package Tree;
 
 use 5.006;
 
+use parent 'Tree::Fast';
 use strict;
 use warnings FATAL => 'all';
 
 our $VERSION = '1.09';
 
 use Scalar::Util qw( blessed refaddr weaken );
-
-use base 'Tree::Fast';
 
 # These are the class methods
 

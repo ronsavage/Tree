@@ -2,12 +2,11 @@ package Tree::Binary2;
 
 use 5.006;
 
+use parent 'Tree';
 use strict;
 use warnings FATAL => 'all';
 
 use Scalar::Util qw( blessed );
-
-use base qw( Tree );
 
 our $VERSION = '1.09';
 
