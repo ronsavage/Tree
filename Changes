@@ -1,5 +1,12 @@
 Revision history for Perl distribution Tree.
 
+1.09  2016-08-14T11:33:00
+	- Adopt new repo structure. For details, see
+		http://savage.net.au/Ron/html/My.Workflow.for.Building.Distros.html.
+	- Update .gitignore and MANIFEST.SKIP.
+	- Move various modules to TEST_REQUIRES within Makefile.PL.
+	- Update version #s in pre-reqs.
+
 1.08  2016-04-21T10:54:00
 	- No code changes.
 	- Overwrite the file LICENSE with the Perl licence, to make it compatible with the statement in

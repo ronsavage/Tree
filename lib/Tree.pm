@@ -5,7 +5,7 @@ use 5.006;
 use strict;
 use warnings FATAL => 'all';
 
-our $VERSION = '2.07';
+our $VERSION = '1.09';
 
 use Scalar::Util qw( blessed refaddr weaken );
 
