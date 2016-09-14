@@ -26,39 +26,39 @@ my(%params) =
 		COMPRESS => 'gzip',
 		SUFFIX   => 'gz'
 	},
-	DISTNAME     => 'Tree',
-	NAME         => 'Tree',
-	PL_FILES    => {},
-	LICENSE      => 'artistic_2',
-	PREREQ_PM    =>
+	DISTNAME	=> 'Tree',
+	NAME		=> 'Tree',
+	PL_FILES	=> {},
+	PREREQ_PM	=>
 	{
-		'base' => 0,
-		'constant' => 0,
-		'Data::Dumper' => 2.136,
-		'Exporter' => 5.66,
-		'overload' => 0,
-		'Scalar::Util' => 1.10,
-		'strict' => 0,
-		'Test::Deep' => 0.088,
-		'Test::Exception' => 0.15,
-		'Test::Pod' => 1.48,
-		'Test::Pod::Coverage' => 1.10,
-		'Test::More' => 1.001014,
-		'Test::Warn' => 0.08,
-		'warnings' => 0,
+		'constant'		=> 0,
+		'Data::Dumper'	=> 2.161,
+		'Exporter'		=> 5.71,
+		'overload'		=> 0,
+		'parent'		=> 0.234,
+		'Scalar::Util'	=> 1.45,
+		'strict'		=> 0,
+		'warnings'		=> 0,
 	},
-	VERSION_FROM => 'lib/Tree.pm',
-	INSTALLDIRS => 'site',
-	EXE_FILES => [],
-	test        =>
+	test =>
 	{
 		'TESTS' => 't/*.t t/Tree_Binary/*.t t/Tree/*.t t/Tree_Fast/*.t',
 	},
+	TEST_REQUIRES =>
+	{
+		'Test::Deep'			=> 1.123,
+		'Test::Exception'		=> 0.43,
+		'Test::Pod'				=> 1.51,
+		'Test::Pod::Coverage'	=> 1.10,
+		'Test::More'			=> 1.302056,
+		'Test::Warn'			=> 0.30,
+	},
+	VERSION_FROM => 'lib/Tree.pm',
 );
 
 if ( ($ExtUtils::MakeMaker::VERSION =~ /^\d\.\d\d$/) && ($ExtUtils::MakeMaker::VERSION > 6.30) )
 {
-	$params{LICENSE} = 'artistic_2';
+	$params{LICENSE} = 'perl';
 }
 
 if ($ExtUtils::MakeMaker::VERSION ge '6.46')
@@ -67,17 +67,20 @@ if ($ExtUtils::MakeMaker::VERSION ge '6.46')
 	{
 		'meta-spec' =>
 		{
-		'version' => 2,
+			version => 2,
 		},
-		resources   =>
+		resources =>
 		{
-		'bugtracker' => 'https://rt.cpan.org/Public/Dist/Display.html?Name=Tree',
-		'license' => 'http://opensource.org/licenses/Artistic-2.0',
-			repository =>
+			bugtracker =>
 			{
-		'type' => 'git',
-		'url' => 'https://github.com/ronsavage/Tree.git',
-		'web' => 'https://github.com/ronsavage/Tree',
+				web => 'https://rt.cpan.org/Public/Dist/Display.html?Name=Tree',
+			},
+			license		=> 'http://dev.perl.org/licenses/',
+			repository	=>
+			{
+				type	=> 'git',
+				url		=> 'https://github.com/ronsavage/Tree.git',
+				web		=> 'https://github.com/ronsavage/Tree',
 			},
 		},
 	};
