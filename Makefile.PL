@@ -26,14 +26,16 @@ my(%params) =
 		COMPRESS => 'gzip',
 		SUFFIX   => 'gz'
 	},
-	DISTNAME	=> 'Tree',
-	NAME		=> 'Tree',
-	PL_FILES	=> {},
-	PREREQ_PM	=>
+	DISTNAME			=> 'Tree',
+	MIN_PERL_VERSION	=> 5.006,
+	NAME				=> 'Tree',
+	PL_FILES			=> {},
+	PREREQ_PM			=>
 	{
 		'constant'		=> 0,
 		'Data::Dumper'	=> 2.161,
 		'Exporter'		=> 5.71,
+		'lib'			=> 0,
 		'overload'		=> 0,
 		'parent'		=> 0.234,
 		'Scalar::Util'	=> 1.45,
