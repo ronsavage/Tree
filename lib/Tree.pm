@@ -2,11 +2,11 @@ package Tree;
 
 use 5.006;
 
-use parent 'Tree::Fast';
+use base 'Tree::Fast';
 use strict;
 use warnings FATAL => 'all';
 
-our $VERSION = '1.09';
+our $VERSION = '1.10';
 
 use Scalar::Util qw( blessed refaddr weaken );
 

@@ -1,5 +1,8 @@
 Revision history for Perl distribution Tree.
 
+1.10  2016-09-15T19:49:00
+	- Replace pre-req 'parent' V 0.234 with 'base' V 0.
+
 1.09  2016-08-14T11:33:00
 	- Adopt new repo structure. For details, see
 		http://savage.net.au/Ron/html/My.Workflow.for.Building.Distros.html.

@@ -1,6 +1,6 @@
 package Tests;
 
-use parent 'Exporter';
+use base 'Exporter';
 use strict;
 use warnings;
 
@@ -9,7 +9,7 @@ use Test::More;
 my @stats = qw( height width depth size is_root is_leaf );
 
 our @EXPORT_OK = qw( %runs );
-our $VERSION   = '1.09';
+our $VERSION   = '1.10';
 
 our %runs = (
     stats => {

@@ -2,13 +2,13 @@ package Tree::Binary2;
 
 use 5.006;
 
-use parent 'Tree';
+use base 'Tree';
 use strict;
 use warnings FATAL => 'all';
 
 use Scalar::Util qw( blessed );
 
-our $VERSION = '1.09';
+our $VERSION = '1.10';
 
 sub _init {
     my $self = shift;

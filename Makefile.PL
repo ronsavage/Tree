@@ -32,12 +32,12 @@ my(%params) =
 	PL_FILES			=> {},
 	PREREQ_PM			=>
 	{
+		'base'			=> 0,
 		'constant'		=> 0,
 		'Data::Dumper'	=> 2.161,
 		'Exporter'		=> 5.71,
 		'lib'			=> 0,
 		'overload'		=> 0,
-		'parent'		=> 0.234,
 		'Scalar::Util'	=> 1.45,
 		'strict'		=> 0,
 		'warnings'		=> 0,
