@@ -6,7 +6,7 @@ use base 'Tree::Fast';
 use strict;
 use warnings FATAL => 'all';
 
-our $VERSION = '1.10';
+our $VERSION = '1.11';
 
 use Scalar::Util qw(blessed);
 
