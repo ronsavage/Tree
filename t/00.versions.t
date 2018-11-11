@@ -5,13 +5,18 @@ use warnings;
 
 # I tried 'require'-ing modules but that did not work.
 
-use Tree::DAG_Node; # For the version #.
+use Tree; # For the version #.
 
 use Test::More;
 
-use File::Slurp::Tiny;
+use base;
+use constant;
+use Data::Dumper;
+use Exporter;
+use lib;
+use overload;
+use Scalar::Util;
 use strict;
-use utf8;
 use warnings;
 
 # ----------------------
@@ -20,13 +25,18 @@ pass('All external modules loaded');
 
 my(@modules) = qw
 /
-	File::Slurp::Tiny
+	base
+	constant
+	Data::Dumper
+	Exporter
+	lib
+	overload
+	Scalar::Util
 	strict
-	utf8
 	warnings
 /;
 
-diag "Testing Tree::DAG_Node V $Tree::DAG_Node::VERSION";
+diag "Testing Tree V $Tree::VERSION";
 
 for my $module (@modules)
 {
