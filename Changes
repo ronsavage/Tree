@@ -1,7 +1,7 @@
 Revision history for Perl distribution Tree.
 
 1.11  2018-11-11T14:41:00
-	- Clean up Tree::Fase.clone_self() by removing useless code.
+	- Clean up Tree::Fast.clone_self() by removing useless code.
 	- Change to the POD to remove "'s" to stop UltraEdit's syntax hiliter getting confused.
 	- Add Tree::DeepClone and t/Tree_DeepClone/*.
 
