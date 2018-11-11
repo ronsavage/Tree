@@ -1007,7 +1007,7 @@ C<Tree> itself is also lightweight.
 These statistics are as of V 1.01.
 
 We use L<Devel::Cover> to test the code coverage of our tests. Below is the
-L<Devel::Cover> report on this module's test suite.
+L<Devel::Cover> report on the test suite of this module.
 
   ---------------------------- ------ ------ ------ ------ ------ ------ ------
   File                           stmt   bran   cond    sub    pod   time  total
