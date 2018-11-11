@@ -479,7 +479,7 @@ Tree - An N-ary tree
   $tree->remove_child( 0 );
 
   my @nodes = $tree->traverse( $tree->POST_ORDER );
-  my $clone = $tree->clone;
+  my $clone = $tree->clone; # See remarks under clone() re deep cloning.
   my $mirror = $tree->clone->mirror;
 
   $tree->add_event_handler({
@@ -520,8 +520,11 @@ children will be cloned.
 
 If you call C<< Tree->clone([$value]) >>, it will instead call C<new($value)>.
 
-B<NOTE:> the value is merely a shallow copy. This means that all references
-will be kept.
+B<NOTE:> the C<value> is merely a shallow copy. This means that all references
+will be kept, but the C<meta> data attached to each node is not copied.
+
+See L<Tree::DeepClone> and t/Tree_DeepClone/*.t if you want deep cloning, which is defined to
+mean that the C<meta> data attached to each node is also copied into the clone.
 
 =head2 Behaviors
 
