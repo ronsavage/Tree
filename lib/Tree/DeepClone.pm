@@ -93,11 +93,7 @@ L<https://savage.net.au/>.
 
 =head1 COPYRIGHT AND LICENSE
 
-Australian copyright (c) 2018, Ron Savage.
-
-	All Programs of mine are 'OSI Certified Open Source Software';
-	you can redistribute them and/or modify them under the terms of
-	The Perl License 2.0, a copy of which is available at:
-	http://opensource.org/licenses/alphabetical.
+This library is free software; you can redistribute it and/or modify it under
+the same terms as Perl itself.
 
 =cut
