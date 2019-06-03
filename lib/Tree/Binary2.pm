@@ -4,7 +4,7 @@ use 5.006;
 
 use base 'Tree';
 use strict;
-use warnings FATAL => 'all';
+use warnings;
 
 use Scalar::Util qw( blessed );
 
