@@ -16,9 +16,9 @@ local $SIG{__WARN__} = sub { $warning = $_[0] };
     my $ok = eval {
 
         for($i=0;$i<100;$i++){
-                $n = Tree->new("child $i");
-                $t->add_child({}, $n);
-                $t = $n;
+            $n = Tree->new("child $i");
+            $t->add_child({}, $n);
+            $t = $n;
         }
 
         1;
